@@ -1,0 +1,42 @@
+.row .day-container {
+	padding: 2px;
+}
+
+.day {
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	background: #f9f9f9;
+	height: 200px;
+	padding: 5px;
+	text-align: center;
+}
+
+.day img {
+	display: block;
+	margin: 0 auto;
+	width: 48px;
+	height: 48px;
+}
+
+.high {
+	color: #666;
+	padding-right: .5rem;
+}
+
+.low {
+	color: #aaa;
+	padding-left: .5rem;
+}
+
+.city {
+	text-align: center;
+}
+
+.units {
+	text-align: center;
+}
+
+.weather {
+	color: #666;
+	font-size: 1.2rem;
+}
