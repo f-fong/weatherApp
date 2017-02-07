@@ -1,10 +1,38 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { expect } from 'chai';
-import sinon from 'sinon';
+const React = require('react');
+const enzyme = require('enzyme');
+const mount = enzyme.mount;
+const chai = require('chai');
+const expect = chai.expect;
+const sinon = require('sinon');
 
-import WeatherApp from '../src/WeatherApp';
-import Day from '../src/Day';
+const WeatherApp = require('../src/WeatherApp');
+const Day = require('../src/Day');
+
+const jsdom = require('jsdom');
+const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
+global.document = doc
+global.window = doc.defaultView
+
+const testDays = [
+  {
+    date: '05 Feb 2017',
+    high: 50,
+    low: 40,
+    text: 'Breezy'
+  },
+  {
+    date: '06 Feb 2017',
+    high: 55,
+    low: 42,
+    text: 'Rain'
+  },
+  {
+    date: '06 Feb 2017',
+    high: 48,
+    low: 43,
+    text: 'Rain'
+  }
+];
 
 describe('<WeatherApp />', () => {
 
@@ -19,8 +47,9 @@ describe('<WeatherApp />', () => {
     expect(WeatherApp.prototype.componentDidMount.calledOnce).to.equal(true);
   });
 
-	it('should render 10 <Day /> when this.state.weather.length === 10', () => {
+	it('should render three <Day /> when this.state.weather.length === 3', () => {
     const wrapper = mount(<Day />);
+    wrapper.setState({ dayList: testDays });
     expect(wrapper.find(Day)).to.have.length(10);
   });
 
