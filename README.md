@@ -21,7 +21,7 @@ Open the index.html file in your browser and you're all set to go!
 
 ## Amount of Time
 
-Dev Environment - ~ 1 hour
+Dev Environment - ~ 1 hour <br />
 Coding - ~ 10 hours
 
 ## Approach to Testing
